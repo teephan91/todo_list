@@ -1,3 +1,3 @@
-import createTodo from './todo.js';
+import createToDo from './todo.js';
 
-createTodo();
+createToDo();
