@@ -41,9 +41,8 @@ export default function createToDo() {
     duedateTitle.setAttribute('for', 'duedate');
     const duedate = document.createElement('input');
     duedate.setAttributes({
-        'type': 'text',
+        'type': 'date',
         'id': 'duedate',
-        'autocomplete': 'off',
         'required': ''
     });
     thirdLi.append(duedateTitle, duedate);
