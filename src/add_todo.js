@@ -1,4 +1,5 @@
 import { Todo } from './create_todo';
+import deleteTodo from './delete_todo';
 
 export default function addTodo(event) {
   event.preventDefault();
@@ -20,9 +21,12 @@ export default function addTodo(event) {
   todoDueDate.textContent = newTodo.duedate;
   const todoPriority = document.createElement("div");
   todoPriority.textContent = newTodo.priority;
-
-  todoElement.append(todoName, todoDetails, todoDueDate, todoPriority);
-
+  const deleteTodoBtn = document.createElement("button");
+  deleteTodoBtn.textContent = "X";
+    
+  deleteTodoBtn.addEventListener('click', deleteTodo);
+    
+  todoElement.append(todoName, todoDetails, todoDueDate, todoPriority, deleteTodoBtn);
   mainContainer.appendChild(todoElement);
 
   this.reset();
