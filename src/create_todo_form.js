@@ -4,7 +4,7 @@ Element.prototype.setAttributes = function(obj){
     }
 };
 
-export default function createTodo() {
+export default function createTodoForm() {
     const body = document.querySelector('body');
     const form = document.createElement('form');
     const ul = document.createElement('ul');
