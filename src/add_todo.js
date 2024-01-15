@@ -1,5 +1,6 @@
 import { Todo } from './create_todo';
 import deleteTodo from './delete_todo';
+import finishTodo from './finish_todo';
 
 export default function addTodo(event) {
   event.preventDefault();
@@ -13,6 +14,8 @@ export default function addTodo(event) {
   let newTodo = new Todo(name, details, duedate, priority);
 
   const todoElement = document.createElement("div");
+  const todoCheckbox = document.createElement("input");
+  todoCheckbox.setAttribute("type", "checkbox");
   const todoName = document.createElement("div");
   todoName.textContent = newTodo.name;
   const todoDetails = document.createElement("div");
@@ -23,10 +26,11 @@ export default function addTodo(event) {
   todoPriority.textContent = newTodo.priority;
   const deleteTodoBtn = document.createElement("button");
   deleteTodoBtn.textContent = "X";
-    
+   
+  todoCheckbox.addEventListener('change', finishTodo);
   deleteTodoBtn.addEventListener('click', deleteTodo);
     
-  todoElement.append(todoName, todoDetails, todoDueDate, todoPriority, deleteTodoBtn);
+  todoElement.append(todoCheckbox, todoName, todoDetails, todoDueDate, todoPriority, deleteTodoBtn);
   mainContainer.appendChild(todoElement);
 
   this.reset();
