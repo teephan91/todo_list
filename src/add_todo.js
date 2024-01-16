@@ -8,8 +8,8 @@ export default function addTodo(event) {
   const mainContainer = document.getElementById("container");
   let name = document.querySelector("#name").value;
   let details = document.querySelector("#details").value;
-  let priority = document.querySelector("#priority").value;
   let duedate = document.querySelector("#duedate").value;
+  let priority = document.querySelector("#priority").value;
 
   let newTodo = new Todo(name, details, duedate, priority);
 
