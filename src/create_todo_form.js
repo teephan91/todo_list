@@ -21,7 +21,7 @@ export default function createTodoForm() {
     submitBtn.setAttribute("type", "submit");
     submitLi.appendChild(submitBtn);
 
-    ul.append(submitLi);
-    form.appendChild(ul);
+    div.append(submitLi);
+    form.appendChild(div);
     body.appendChild(form);
 }
