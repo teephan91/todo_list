@@ -1,7 +1,7 @@
 import createTodoForm from './create_todo_form.js';
 import addTodo from './add_todo.js';
 
-createTodoForm();
+createTodoForm('submit');
 
 export class Todo {
     constructor(name, details, duedate, priority) {

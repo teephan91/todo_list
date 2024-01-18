@@ -1,5 +1,6 @@
 import createSimilarProperties from "./todo_form_similar_props";
 import createPriorityProperty from "./todo_form_priority";
+import createTodoFormBtn from "./todo_form_btn";
 
 Element.prototype.setAttributes = function (obj) { 
     for(var prop in obj) {
@@ -7,21 +8,15 @@ Element.prototype.setAttributes = function (obj) {
     }
 };
 
-export default function createTodoForm() {
+export default function createTodoForm(btn_value) {
     const body = document.querySelector('body');
     const form = document.createElement('form');
     const div = document.createElement('div');
   
     div.appendChild(createSimilarProperties());
     div.appendChild(createPriorityProperty());
+    div.appendChild(createTodoFormBtn(btn_value));
 
-    const submitLi = document.createElement("li");
-    const submitBtn = document.createElement("button");
-    submitBtn.textContent = "Submit";
-    submitBtn.setAttribute("type", "submit");
-    submitLi.appendChild(submitBtn);
-
-    div.append(submitLi);
     form.appendChild(div);
     body.appendChild(form);
 }
