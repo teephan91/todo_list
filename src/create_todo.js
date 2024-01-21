@@ -13,6 +13,6 @@ export class Todo {
 }
 
 export default function createTodo() {
-    const form = document.querySelector('form');
+    const form = document.getElementById('main');
     form.addEventListener('submit', addTodo);
 }
