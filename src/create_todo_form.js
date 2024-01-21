@@ -8,13 +8,15 @@ Element.prototype.setAttributes = function (obj) {
     }
 };
 
-export default function createTodoForm(btn_value) {
+export default function createTodoForm(name_value, details_value, duedate_value, priority_value, btn_value) {
     const body = document.querySelector('body');
     const form = document.createElement('form');
     const div = document.createElement('div');
   
-    div.appendChild(createSimilarProperties());
-    div.appendChild(createPriorityProperty());
+    div.appendChild(
+      createSimilarProperties(name_value, details_value, duedate_value)
+    );
+    div.appendChild(createPriorityProperty(priority_value));
     div.appendChild(createTodoFormBtn(btn_value));
 
     form.appendChild(div);

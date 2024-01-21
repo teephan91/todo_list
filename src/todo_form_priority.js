@@ -1,4 +1,4 @@
-export default function createPriorityProperty() {
+export default function createPriorityProperty(priority_value) {
     const div = document.createElement("div");
     const title = document.createElement("label");
     const select = document.createElement("select");
@@ -13,6 +13,9 @@ export default function createPriorityProperty() {
 
         option.textContent = options[i];
         option.setAttribute('value', options[i]);
+        if (option.value === priority_value) {
+            option.setAttribute("selected", "");
+        }
 
         select.appendChild(option);
     }

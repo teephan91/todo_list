@@ -1,6 +1,7 @@
 import { Todo } from './create_todo';
 import deleteTodo from './delete_todo';
 import finishTodo from './finish_todo';
+import editTodo from './edit_todo';
 
 let idCounter = 1;
 
@@ -33,11 +34,14 @@ export default function addTodo(event) {
   todoPriority.setAttribute('class', 'priority');
   const deleteTodoBtn = document.createElement("button");
   deleteTodoBtn.textContent = "X";
+  const editTodoBtn = document.createElement("button");
+  editTodoBtn.textContent = "Edit";
    
   todoCheckbox.addEventListener('change', finishTodo);
   deleteTodoBtn.addEventListener('click', deleteTodo);
+  editTodoBtn.addEventListener('click', editTodo);
     
-  todoElement.append(todoCheckbox, todoName, todoDetails, todoDueDate, todoPriority, deleteTodoBtn);
+  todoElement.append(todoCheckbox, todoName, todoDetails, todoDueDate, todoPriority, deleteTodoBtn, editTodoBtn);
   mainContainer.appendChild(todoElement);
 
   this.reset();

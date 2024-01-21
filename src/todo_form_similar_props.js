@@ -1,4 +1,4 @@
-export default function createSimilarProperties() {
+export default function createSimilarProperties(name_value, details_value, duedate_value) {
     const outerDiv = document.createElement('div');
     const todoSimilarProperties = [
       {
@@ -6,18 +6,21 @@ export default function createSimilarProperties() {
         type: "text",
         id: "name",
         required: "",
+        value: name_value,
       },
       {
         for: "details",
         type: "text",
         id: "details",
         required: "",
+        value: details_value,
       },
       {
         for: "duedate",
         type: "date",
         id: "duedate",
         required: "",
+        value: duedate_value,
       },
     ];
 
@@ -33,6 +36,7 @@ export default function createSimilarProperties() {
         type: todoSimilarProperties[i]["type"],
         id: todoSimilarProperties[i]["id"],
         required: todoSimilarProperties[i]["required"],
+        value: todoSimilarProperties[i]["value"],
       });
 
       innerDiv.append(title, input);
