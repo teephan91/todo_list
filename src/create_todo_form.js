@@ -8,10 +8,12 @@ Element.prototype.setAttributes = function (obj) {
     }
 };
 
-export default function createTodoForm(name_value, details_value, duedate_value, priority_value, btn_value) {
+export default function createTodoForm(form_id, name_value, details_value, duedate_value, priority_value, btn_value) {
     const body = document.querySelector('body');
     const form = document.createElement('form');
     const div = document.createElement('div');
+
+    form.setAttribute('id', form_id);
   
     div.appendChild(
       createSimilarProperties(name_value, details_value, duedate_value)
