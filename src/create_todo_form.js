@@ -9,12 +9,11 @@ Element.prototype.setAttributes = function (obj) {
     }
 };
 
-export default function createTodoForm(form_id, project_value, name_value, details_value, duedate_value, priority_value, btn_value) {
-    const body = document.querySelector('body');
+export default function createTodoForm(form_class, project_value, name_value, details_value, duedate_value, priority_value, btn_value) {
     const form = document.createElement('form');
     const div = document.createElement('div');
 
-    form.setAttribute('id', form_id);
+    form.setAttribute('class', form_class);
 
     div.appendChild(createProjectName(project_value));
     div.appendChild(
@@ -24,5 +23,6 @@ export default function createTodoForm(form_id, project_value, name_value, detai
     div.appendChild(createTodoFormBtn(btn_value));
 
     form.appendChild(div);
-    body.appendChild(form);
+    
+    return form;
 }
