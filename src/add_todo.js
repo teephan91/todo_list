@@ -16,10 +16,10 @@ export default function addTodo(event) {
   event.preventDefault();
 
   const mainContainer = document.getElementById(this.parentNode.id);
-  let name = document.querySelector("#name").value;
-  let details = document.querySelector("#details").value;
-  let duedate = document.querySelector("#duedate").value;
-  let priority = document.querySelector("#priority").value;
+  let name = mainContainer.querySelector("#name").value;
+  let details = mainContainer.querySelector("#details").value;
+  let duedate = mainContainer.querySelector("#duedate").value;
+  let priority = mainContainer.querySelector("#priority").value;
   let newTodo = new Todo(name, details, duedate, priority);
 
   const todoElement = document.createElement("div");
