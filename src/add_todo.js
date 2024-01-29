@@ -1,14 +1,21 @@
-import { Todo } from './create_todo';
 import deleteTodo from './delete_todo';
 import finishTodo from './finish_todo';
 import editTodo from './edit_todo';
+import updateTodoCount from './update_todo_count';
 
-let idCounter = 1;
+class Todo {
+  constructor(name, details, duedate, priority) {
+    this.name = name;
+    this.details = details;
+    this.duedate = duedate;
+    this.priority = priority;
+  }
+}
 
 export default function addTodo(event) {
   event.preventDefault();
 
-  const mainContainer = document.getElementById("container");
+  const mainContainer = document.getElementById(this.parentNode.id);
   let name = document.querySelector("#name").value;
   let details = document.querySelector("#details").value;
   let duedate = document.querySelector("#duedate").value;
@@ -16,8 +23,7 @@ export default function addTodo(event) {
   let newTodo = new Todo(name, details, duedate, priority);
 
   const todoElement = document.createElement("div");
-  todoElement.setAttribute('id', idCounter);
-  idCounter++;
+  todoElement.setAttribute("id", updateTodoCount(this.parentNode.id));
   const todoCheckbox = document.createElement("input");
   todoCheckbox.setAttribute("type", "checkbox");
   const todoName = document.createElement("div");

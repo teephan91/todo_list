@@ -1,14 +1,13 @@
 import createTodoForm from './create_todo_form.js';
 import addTodo from './add_todo.js';
 
-let projectCounter = 1;
+export let projectCountStorage = [];
+let projectCount = 1;
 
-export class Todo {
-    constructor(name, details, duedate, priority) {
-        this.name = name;
-        this.details = details;
-        this.duedate = duedate;
-        this.priority = priority;
+class projectTodoCounter {
+    constructor(project, count) {
+        this.project = project;
+        this.count = count;
     }
 }
 
@@ -19,8 +18,10 @@ export default function createTodo(event) {
     const container = document.createElement('div');
     const project = document.querySelector('#project');
     
-    container.setAttribute('id', `project_${projectCounter}`);
-    projectCounter++;
+    container.setAttribute('id', `project_${projectCount}`);
+    let newProjectTodoCounter = new projectTodoCounter(`project_${projectCount}`, 1);
+    projectCountStorage.push(newProjectTodoCounter);
+    projectCount++;
     
     const form = createTodoForm(
       "main",
