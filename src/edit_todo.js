@@ -3,18 +3,19 @@ import addTodo from "./add_todo";
 
 export default function editTodo() {
     const todoId = document.getElementById(this.parentNode.id);
-    const form = document.getElementById('main');
-    let name = document.querySelector("#name");
-    let details = document.querySelector("#details");
-    let duedate = document.querySelector("#duedate");
-    let priority = document.querySelector("#priority");
+    const mainContainer = document.getElementById(this.parentNode.parentNode.id);
+    const form = mainContainer.querySelector('.main');
+    let name = mainContainer.querySelector("#name");
+    let details = mainContainer.querySelector("#details");
+    let duedate = mainContainer.querySelector("#duedate");
+    let priority = mainContainer.querySelector("#priority");
 
     name.value = todoId.getElementsByClassName('name')[0].textContent;
     details.value = todoId.getElementsByClassName('details')[0].textContent;
     duedate.value = todoId.getElementsByClassName('duedate')[0].textContent;
     priority.value = todoId.getElementsByClassName('priority')[0].textContent;
     
-    form.setAttribute('class', this.parentNode.id);
+    form.classList.add(this.parentNode.id);
     form.removeEventListener('submit', addTodo);
     form.addEventListener('submit', updateTodo);
 }

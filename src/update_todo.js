@@ -3,13 +3,14 @@ import addTodo from "./add_todo";
 export default function updateTodo(event) {
     event.preventDefault();
 
-    const form = document.getElementById("main");
-    const todoId = form.className;
+    const mainContainer = document.getElementById(this.parentNode.id);
+    const form = mainContainer.querySelector('.main');
+    const todoId = form.classList[1];
     let todo = document.getElementById(todoId);
-    let name = document.querySelector("#name").value;
-    let details = document.querySelector("#details").value;
-    let duedate = document.querySelector("#duedate").value;
-    let priority = document.querySelector("#priority").value;
+    let name = mainContainer.querySelector("#name").value;
+    let details = mainContainer.querySelector("#details").value;
+    let duedate = mainContainer.querySelector("#duedate").value;
+    let priority = mainContainer.querySelector("#priority").value;
 
     todo.getElementsByClassName("name")[0].textContent = name;
     todo.getElementsByClassName("details")[0].textContent =
@@ -21,7 +22,7 @@ export default function updateTodo(event) {
 
     form.removeEventListener('submit', updateTodo);
     form.addEventListener('submit', addTodo);
-    form.removeAttribute('class');
+    form.classList.remove(todoId);
 
     form.reset();
 }
