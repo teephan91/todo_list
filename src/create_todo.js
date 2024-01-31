@@ -3,7 +3,7 @@ import addTodo from './add_todo.js';
 import deleteProject from './delete_project.js';
 
 export let projectCountStorage = [];
-let projectCount = 1;
+let projectCount = 0;
 
 class projectTodoCounter {
     constructor(project, count) {
@@ -21,7 +21,7 @@ export default function createTodo(event) {
     const project = document.querySelector('#project');
     
     container.setAttribute('id', `project_${projectCount}`);
-    let newProjectTodoCounter = new projectTodoCounter(`project_${projectCount}`, 1);
+    let newProjectTodoCounter = new projectTodoCounter(`project_${projectCount}`, 0);
     projectCountStorage.push(newProjectTodoCounter);
     projectCount++;
 
@@ -38,6 +38,7 @@ export default function createTodo(event) {
       "submit"
     );
     form.addEventListener('submit', addTodo);
+    console.log(projectCountStorage)
     container.append(deleteProjectBtn, form);
     body.appendChild(container);
 
