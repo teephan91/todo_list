@@ -38,7 +38,6 @@ export default function createTodo(event) {
       "submit"
     );
     form.addEventListener('submit', addTodo);
-    console.log(projectCountStorage)
     container.append(deleteProjectBtn, form);
     body.appendChild(container);
 
