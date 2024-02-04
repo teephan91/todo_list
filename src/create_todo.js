@@ -15,7 +15,8 @@ class projectTodoCounter {
 export default function createTodo(event) {
     event.preventDefault();
 
-    const body = document.querySelector('body');
+    const sideBar = document.querySelector('.sidebar');
+    const todoContainer = document.querySelector('.todo_container');
     const container = document.createElement('div');
     const deleteProjectBtn = document.createElement('button');
     const project = document.querySelector('#project');
@@ -39,8 +40,8 @@ export default function createTodo(event) {
     );
     form.addEventListener('submit', addTodo);
     container.append(deleteProjectBtn, form);
-    body.appendChild(container);
+    todoContainer.appendChild(container);
 
     this.reset();
-    body.removeChild(this);
+    sideBar.removeChild(this);
 }

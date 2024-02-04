@@ -1,7 +1,7 @@
 import createTodo from "./create_todo";
 
 export default function addProject() {
-    const body = document.querySelector("body");
+    const sideBar = document.querySelector(".sidebar");
     const form = document.createElement('form');
     const input = document.createElement('input');
     const btn = document.createElement('button');
@@ -17,7 +17,7 @@ export default function addProject() {
     form.setAttribute('id', 'project_form');
     
     form.append(input, btn);
-    body.appendChild(form);
+    sideBar.appendChild(form);
 
     form.addEventListener("submit", createTodo);
 }

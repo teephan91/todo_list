@@ -6,6 +6,4 @@ export default function deleteProject() {
     projectToBeDeleted.remove();
 
     projectCountStorage.splice(projectCountStorage.findIndex(el => el.project === projectToBeDeleted.id), 1);
-
-    console.log(projectCountStorage);
 } 
