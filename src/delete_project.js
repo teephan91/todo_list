@@ -1,9 +1,11 @@
 import { projectCountStorage } from "./create_todo";
 
 export default function deleteProject() {
-    const projectToBeDeleted = document.getElementById(this.parentNode.id);
+    const projectDeletedSidebar = document.getElementsByClassName(this.parentNode.className)[0];
+    const projectDeletedTodoContainer = document.getElementById(projectDeletedSidebar.className);
     
-    projectToBeDeleted.remove();
+    projectDeletedSidebar.remove();
+    projectDeletedTodoContainer.remove();
 
-    projectCountStorage.splice(projectCountStorage.findIndex(el => el.project === projectToBeDeleted.id), 1);
+    projectCountStorage.splice(projectCountStorage.findIndex(el => el.project === projectDeletedTodoContainer.id), 1);
 } 

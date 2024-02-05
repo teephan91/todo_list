@@ -16,26 +16,25 @@ export default function createTodo(event) {
     event.preventDefault();
 
     const sideBar = document.querySelector('.sidebar');
-    const projectList = document.createElement('div');
+    const projectContainer = document.createElement('div');
+    const projectName = document.createElement("p");
+    const deleteProjectBtn = document.createElement("button");
     const todoContainer = document.querySelector('.todo_container');
     const container = document.createElement('div');
-    const deleteProjectBtn = document.createElement('button');
     const project = document.querySelector('#project');
 
-    sideBar.appendChild(projectList);
-    let projectName = document.createElement('p');
+    sideBar.appendChild(projectContainer);
     projectName.textContent = project.value;
-    projectName.setAttribute('class', `project_${projectCount}`);
-    projectList.appendChild(projectName);
+    deleteProjectBtn.textContent = 'X';
+    deleteProjectBtn.addEventListener("click", deleteProject);
+    projectContainer.append(projectName, deleteProjectBtn);
+    projectContainer.setAttribute("class", `project_${projectCount}`);
     
     container.setAttribute('id', `project_${projectCount}`);
     let newProjectTodoCounter = new projectTodoCounter(`project_${projectCount}`, 0);
     projectCountStorage.push(newProjectTodoCounter);
     projectCount++;
 
-    deleteProjectBtn.textContent = 'X';
-    deleteProjectBtn.addEventListener('click', deleteProject);
-    
     const form = createTodoForm(
       "main",
       project.value,
@@ -45,8 +44,9 @@ export default function createTodo(event) {
       "",
       "submit"
     );
+    
     form.addEventListener('submit', addTodo);
-    container.append(deleteProjectBtn, form);
+    container.appendChild(form);
     todoContainer.appendChild(container);
 
     this.reset();
