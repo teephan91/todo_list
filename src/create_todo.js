@@ -1,5 +1,3 @@
-import createTodoForm from './create_todo_form.js';
-import addTodo from './add_todo.js';
 import deleteProject from './delete_project.js';
 import displayProject from './display_project.js';
 
@@ -30,6 +28,13 @@ export default function createTodo(event) {
     projectContainer.append(projectName, deleteProjectBtn);
     projectContainer.setAttribute("class", `project_${projectCount}`);
     projectCount++;
+
+    let newProjectTodoCounter = new projectTodoCounter(
+       projectContainer.className,
+       0
+     );
+    projectCountStorage.push(newProjectTodoCounter);
+    console.log(projectCountStorage);
 
     this.reset();
     sideBar.removeChild(this);
