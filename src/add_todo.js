@@ -2,6 +2,7 @@ import deleteTodo from './delete_todo';
 import finishTodo from './finish_todo';
 import editTodo from './edit_todo';
 import updateTodoCount from './update_todo_count';
+import createTodoForm from './create_todo_form';
 
 class Todo {
   constructor(name, details, duedate, priority) {
@@ -12,7 +13,16 @@ class Todo {
   }
 }
 
-export default function addTodo(event) {
+export default function createForm() {
+  const projectContainer = document.getElementById(this.parentNode.id);
+  
+  const form = createTodoForm("main", "", "", "", "", "submit");
+
+  form.addEventListener("submit", addTodo);
+  projectContainer.appendChild(form);
+}
+
+function addTodo(event) {
   event.preventDefault();
 
   const mainContainer = document.getElementById(this.parentNode.id);
@@ -51,4 +61,5 @@ export default function addTodo(event) {
   mainContainer.appendChild(todoElement);
 
   this.reset();
+  this.remove();
 }
