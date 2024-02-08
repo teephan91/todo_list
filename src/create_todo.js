@@ -55,5 +55,5 @@ export default function createTodo(event) {
     projectCountStorage.push(newProjectTodoCounter);
 
     this.reset();
-    sideBar.removeChild(this);
+    sideBar.removeChild(this.parentNode);
 }
