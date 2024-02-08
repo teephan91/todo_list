@@ -1,10 +1,13 @@
 import updateTodo from "./update_todo";
 import addTodo from "./add_todo";
+import createTodoForm from "./create_todo_form";
 
 export default function editTodo() {
+    const form = createTodoForm("main", "", "", "", "", "submit");
     const todoId = document.getElementById(this.parentNode.id);
+    todoId.appendChild(form);
     const mainContainer = document.getElementById(this.parentNode.parentNode.id);
-    const form = mainContainer.querySelector('.main');
+
     let name = mainContainer.querySelector("#name");
     let details = mainContainer.querySelector("#details");
     let duedate = mainContainer.querySelector("#duedate");

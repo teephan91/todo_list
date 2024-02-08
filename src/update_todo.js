@@ -24,5 +24,6 @@ export default function updateTodo(event) {
     form.addEventListener('submit', addTodo);
     form.classList.remove(todoId);
 
-    form.reset();
+  form.reset();
+  form.remove();
 }
