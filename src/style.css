@@ -6,6 +6,7 @@
     font-size: 16px;
 
     --backgroundColor: #eeeeee;
+    --btnBackgroundColor: #34b233;
 }
 
 html {
@@ -31,6 +32,51 @@ header {
     display: flex;
     flex-grow: 1;
 }
+
+    .sidebar {
+        padding: 1.25rem;
+        width: 300px;
+    }
+
+        .sidebar h2 {
+            margin: .75rem;
+        }
+
+        .sidebar button {
+            width: 50%;
+            border: none;
+            border-radius: 15px;
+            padding: .5rem;
+            margin: .75rem;
+            font-family: Lato, sans-serif;
+            color: #ffffff;
+            background-color: var(--btnBackgroundColor);
+        }
+
+        .add_project {
+            display: flex;
+            width: 100%;
+            gap: .5rem;
+        }
+
+            #project_form {
+                display: flex;
+                gap: .5rem;
+            }
+
+                #project_form > button {
+                    width: 80%;
+                }
+
+            .add_project > button {
+                background-color: maroon;
+            }
+
+        
+
+    .todo_container {
+        padding: 1.25rem;
+    }
 
 footer {
 

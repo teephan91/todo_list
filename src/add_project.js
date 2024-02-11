@@ -23,6 +23,7 @@ export default function addProject() {
     
     form.append(input, submitBtn);
     outerDiv.append(form, deleteBtn);
+    outerDiv.setAttribute('class', 'add_project');
     sideBar.appendChild(outerDiv);
 
     form.addEventListener("submit", createTodo);
