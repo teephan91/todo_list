@@ -64,15 +64,20 @@ header {
                 gap: .5rem;
             }
 
-                #project_form > button {
-                    width: 80%;
-                }
-
             .add_project > button {
                 background-color: maroon;
             }
 
-        
+        .sidebar > div {
+            display: flex;
+            justify-content: space-between;
+            margin: .75rem;
+        }
+
+            .sidebar > div > button{
+                width: min-content;
+                background-color: maroon;
+            }
 
     .todo_container {
         padding: 1.25rem;
