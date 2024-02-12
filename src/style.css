@@ -7,7 +7,6 @@
 
     --backgroundColor: #eeeeee;
     --btnBackgroundColor: #34b233;
-
 }
 
 html {
@@ -27,6 +26,7 @@ header {
     font-family: 'Russo One', sans-serif;
     font-size: 25px;
     text-align: center;
+    border-bottom: 1px solid black;
 }
 
 h2 {
@@ -51,7 +51,8 @@ button {
 
     .sidebar {
         padding: 1.25rem;
-        width: 300px;
+        width: 25%;
+        border-right: 1px solid black;
     }
 
         .add_project {
