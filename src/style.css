@@ -7,6 +7,7 @@
 
     --backgroundColor: #eeeeee;
     --btnBackgroundColor: #34b233;
+
 }
 
 html {
@@ -93,5 +94,16 @@ button {
         }
 
 footer {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    padding: 20px 0;
+    color: #6b6b6b;
+    background-color: #e7e5e4;
+}
 
+.github:hover {
+    transform: scale(1.2);
 }
