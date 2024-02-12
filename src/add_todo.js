@@ -50,6 +50,7 @@ function addTodo(event) {
   todoPriority.setAttribute('class', 'priority');
   const deleteTodoBtn = document.createElement("button");
   deleteTodoBtn.textContent = "X";
+  deleteTodoBtn.style.backgroundColor = 'maroon';
   const editTodoBtn = document.createElement("button");
   editTodoBtn.textContent = "Edit";
    
